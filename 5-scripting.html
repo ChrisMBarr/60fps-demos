@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>60 FPS Chrome - Demo 1</title>
+	<style type="text/css">
+		*{
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		html,
+		body{
+			font-family: Helvetica, sans-serif;
+		}
+		
+		button{
+			font-size: 16px;
+		}
+		
+		.grid-container{
+			float:left;
+			width: 33.3333%;
+			border: 1px solid #AAA;
+			padding: 10px;
+		}
+		
+		.perf{
+			color: red;
+		}
+		
+		.output-list{
+			margin:0;
+			padding:0;
+		}
+		.output-list li{
+			list-style: none;
+			display: block;
+			padding: 2px 5px;
+		}
+		
+		.output-list li:hover{
+			background-color: #CCC;
+		}
+		
+		.color-display{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin: 0 5px;
+			border: 1px solid #FFF;
+			border-radius: 50%;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	
+	<button type="button" id="btn-clear-outputs">Clear All</button>
+	
+	<hr />
+	
+	<div class="grid-container">
+		<h2>Slow</h2>
+		
+		<button type="button" id="btn-colors-slow">Colors!</button>
+		
+		<hr />
+		<h3>Output <small class="perf" id="perf-slow"></small></h3>
+		<ul class="output-list" id='output-slow'></ul>
+	</div>
+	
+	<div class="grid-container">
+		<h2>Medium</h3>
+		
+		<button type="button" id="btn-colors-medium">Colors!</button>
+		
+		<hr />
+		<h3>Output <small class="perf" id="perf-medium"></small></h3>
+		<ul class="output-list" id='output-medium'></ul>
+	</div>
+	
+	<div class="grid-container">
+		<h2>Fast</h3>
+		
+		<button type="button" id="btn-colors-fast">Colors!</button>
+		
+		<hr />
+		<h3>Output <small class="perf" id="perf-fast"></small></h3>
+		<ul class="output-list" id='output-fast'></ul>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+	<script src="resources/colors.js"></script>
+	<script src="5-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<html>
+<head>
+	<title>60 FPS Chrome - Demo 1</title>
+	<style type="text/css">
+		*{
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		html,
+		body{
+			font-family: Helvetica, sans-serif;
+			margin:0;
+		}
+
+		.grid-container{
+			float:left;
+			width: 50%;
+			padding: 0 10px;
+		}
+		
+		.clearfix{clear:both;}
+
+		.scrollable-container{
+			max-height: 300px;
+			overflow:auto;
+			border: 1px solid #CCC;
+		}
+
+		.scrollable-container > .item{
+			background-color: #FFF;
+			border-bottom: 1px solid #AAA;
+			padding: 10px 5px;
+		}
+
+		.scrollable-container > .item:nth-child(odd){
+			background-color: #EEE;
+		}
+
+		.repaint-fix {
+			/*Ideally just put this CSS rule in the same class that needs it,
+			but for the purposes of this demo, it is displayed separately*/
+			transform: translate3d(0,0,0);
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="grid-container">
+		<h3>Repaint on scroll
+			<small>(but not when viewed on a hi-DPI device!)</small>
+		</h3>
+	
+		<div class="scrollable-container">
+			<div class="item">One</div>
+			<div class="item">Two</div>
+			<div class="item">Three</div>
+			<div class="item">Four</div>
+			<div class="item">Five</div>
+			<div class="item">Six</div>
+			<div class="item">Seven</div>
+			<div class="item">Eight</div>
+			<div class="item">Nine</div>
+			<div class="item">Ten</div>
+			<div class="item">Eleven</div>
+			<div class="item">Twelve</div>
+			<div class="item">Thirteen</div>
+			<div class="item">Fourteen</div>
+			<div class="item">Fifteen</div>
+			<div class="item">Sixteen</div>
+			<div class="item">Seventeen</div>
+			<div class="item">Eighteen</div>
+			<div class="item">Nineteen</div>
+			<div class="item">Twenty</div>
+			<div class="item">Twentyone</div>
+			<div class="item">Twentytwo</div>
+			<div class="item">Twentythree</div>
+			<div class="item">Twentyfour</div>
+			<div class="item">Twentyfive</div>
+			<div class="item">Twentysix</div>
+			<div class="item">Twentyseven</div>
+			<div class="item">Twentyeight</div>
+			<div class="item">Twentynine</div>
+			<div class="item">Thirty</div>
+			<div class="item">Thirtyone</div>
+			<div class="item">Thirtytwo</div>
+			<div class="item">Thirtythree</div>
+			<div class="item">Thirtyfour</div>
+			<div class="item">Thirtyfive</div>
+			<div class="item">Thirtysix</div>
+			<div class="item">Thirtyseven</div>
+			<div class="item">Thirtyeight</div>
+			<div class="item">Thirtynine</div>
+			<div class="item">Forty</div>
+			<div class="item">Fortyone</div>
+			<div class="item">Fortytwo</div>
+			<div class="item">Fortythree</div>
+			<div class="item">Fortyfour</div>
+			<div class="item">Fortyfive</div>
+			<div class="item">Fortysix</div>
+			<div class="item">Fortyseven</div>
+			<div class="item">Fortyeight</div>
+			<div class="item">Fortynine</div>
+			<div class="item">Fifty</div>
+			<div class="item">Fiftyone</div>
+			<div class="item">Fiftytwo</div>
+			<div class="item">Fiftythree</div>
+			<div class="item">Fiftyfour</div>
+			<div class="item">Fiftyfive</div>
+			<div class="item">Fiftysix</div>
+			<div class="item">Fiftyseven</div>
+			<div class="item">Fiftyeight</div>
+			<div class="item">Fiftynine</div>
+			<div class="item">Sixty</div>
+			<div class="item">Sixtyone</div>
+			<div class="item">Sixtytwo</div>
+			<div class="item">Sixtythree</div>
+			<div class="item">Sixtyfour</div>
+			<div class="item">Sixtyfive</div>
+			<div class="item">Sixtysix</div>
+			<div class="item">Sixtyseven</div>
+			<div class="item">Sixtyeight</div>
+			<div class="item">Sixtynine</div>
+			<div class="item">Seventy</div>
+			<div class="item">Seventyone</div>
+			<div class="item">Seventytwo</div>
+			<div class="item">Seventythree</div>
+			<div class="item">Seventyfour</div>
+			<div class="item">Seventyfive</div>
+			<div class="item">Seventysix</div>
+			<div class="item">Seventyseven</div>
+			<div class="item">Seventyeight</div>
+			<div class="item">Seventynine</div>
+			<div class="item">Eighty</div>
+			<div class="item">Eightyone</div>
+			<div class="item">Eightytwo</div>
+			<div class="item">Eightythree</div>
+			<div class="item">Eightyfour</div>
+			<div class="item">Eightyfive</div>
+			<div class="item">Eightysix</div>
+			<div class="item">Eightyseven</div>
+			<div class="item">Eightyeight</div>
+			<div class="item">Eightynine</div>
+			<div class="item">Ninety</div>
+			<div class="item">Ninetyone</div>
+			<div class="item">Ninetytwo</div>
+			<div class="item">Ninetythree</div>
+			<div class="item">Ninetyfour</div>
+			<div class="item">Ninetyfive</div>
+			<div class="item">Ninetysix</div>
+			<div class="item">Ninetyseven</div>
+			<div class="item">Ninetyeight</div>
+			<div class="item">Ninetynine</div>
+		</div>
+	</div>
+
+	<div class="grid-container">
+		<h3>No Repaint!</h3>
+		<div class="scrollable-container repaint-fix">
+			<div class="item">One</div>
+			<div class="item">Two</div>
+			<div class="item">Three</div>
+			<div class="item">Four</div>
+			<div class="item">Five</div>
+			<div class="item">Six</div>
+			<div class="item">Seven</div>
+			<div class="item">Eight</div>
+			<div class="item">Nine</div>
+			<div class="item">Ten</div>
+			<div class="item">Eleven</div>
+			<div class="item">Twelve</div>
+			<div class="item">Thirteen</div>
+			<div class="item">Fourteen</div>
+			<div class="item">Fifteen</div>
+			<div class="item">Sixteen</div>
+			<div class="item">Seventeen</div>
+			<div class="item">Eighteen</div>
+			<div class="item">Nineteen</div>
+			<div class="item">Twenty</div>
+			<div class="item">Twentyone</div>
+			<div class="item">Twentytwo</div>
+			<div class="item">Twentythree</div>
+			<div class="item">Twentyfour</div>
+			<div class="item">Twentyfive</div>
+			<div class="item">Twentysix</div>
+			<div class="item">Twentyseven</div>
+			<div class="item">Twentyeight</div>
+			<div class="item">Twentynine</div>
+			<div class="item">Thirty</div>
+			<div class="item">Thirtyone</div>
+			<div class="item">Thirtytwo</div>
+			<div class="item">Thirtythree</div>
+			<div class="item">Thirtyfour</div>
+			<div class="item">Thirtyfive</div>
+			<div class="item">Thirtysix</div>
+			<div class="item">Thirtyseven</div>
+			<div class="item">Thirtyeight</div>
+			<div class="item">Thirtynine</div>
+			<div class="item">Forty</div>
+			<div class="item">Fortyone</div>
+			<div class="item">Fortytwo</div>
+			<div class="item">Fortythree</div>
+			<div class="item">Fortyfour</div>
+			<div class="item">Fortyfive</div>
+			<div class="item">Fortysix</div>
+			<div class="item">Fortyseven</div>
+			<div class="item">Fortyeight</div>
+			<div class="item">Fortynine</div>
+			<div class="item">Fifty</div>
+			<div class="item">Fiftyone</div>
+			<div class="item">Fiftytwo</div>
+			<div class="item">Fiftythree</div>
+			<div class="item">Fiftyfour</div>
+			<div class="item">Fiftyfive</div>
+			<div class="item">Fiftysix</div>
+			<div class="item">Fiftyseven</div>
+			<div class="item">Fiftyeight</div>
+			<div class="item">Fiftynine</div>
+			<div class="item">Sixty</div>
+			<div class="item">Sixtyone</div>
+			<div class="item">Sixtytwo</div>
+			<div class="item">Sixtythree</div>
+			<div class="item">Sixtyfour</div>
+			<div class="item">Sixtyfive</div>
+			<div class="item">Sixtysix</div>
+			<div class="item">Sixtyseven</div>
+			<div class="item">Sixtyeight</div>
+			<div class="item">Sixtynine</div>
+			<div class="item">Seventy</div>
+			<div class="item">Seventyone</div>
+			<div class="item">Seventytwo</div>
+			<div class="item">Seventythree</div>
+			<div class="item">Seventyfour</div>
+			<div class="item">Seventyfive</div>
+			<div class="item">Seventysix</div>
+			<div class="item">Seventyseven</div>
+			<div class="item">Seventyeight</div>
+			<div class="item">Seventynine</div>
+			<div class="item">Eighty</div>
+			<div class="item">Eightyone</div>
+			<div class="item">Eightytwo</div>
+			<div class="item">Eightythree</div>
+			<div class="item">Eightyfour</div>
+			<div class="item">Eightyfive</div>
+			<div class="item">Eightysix</div>
+			<div class="item">Eightyseven</div>
+			<div class="item">Eightyeight</div>
+			<div class="item">Eightynine</div>
+			<div class="item">Ninety</div>
+			<div class="item">Ninetyone</div>
+			<div class="item">Ninetytwo</div>
+			<div class="item">Ninetythree</div>
+			<div class="item">Ninetyfour</div>
+			<div class="item">Ninetyfive</div>
+			<div class="item">Ninetysix</div>
+			<div class="item">Ninetyseven</div>
+			<div class="item">Ninetyeight</div>
+			<div class="item">Ninetynine</div>
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+</body>
+</html>
