@@ -5,9 +5,13 @@
 		html,
 		body{
 			background: #7289A4;
-			background-image: url('resources/stripes.png');
 			font-family: Helvetica, sans-serif;
 			margin:0;
+
+			/*
+				Using this BG image instead of a generated CSS pattern is much faster!
+			*/
+			background-image: url('resources/stripes.png');
 		}
 		
 		.clearfix{clear:both;}
@@ -24,7 +28,7 @@
 			/*
 				By applying a 3D transform, this forces Chrome to 
 				display this element in a new compositing layer,
-				but it looks no differnt.
+				but it looks no different.
 				Chrome will now use GPU acceleration to render this layer as well!
 			*/
 			transform: translateZ(0);
