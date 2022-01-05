@@ -2,9 +2,9 @@
 
 ###Some demos on how to make web apps render quickly!
 
-####[View Demos](http://chrismbarr.github.io/60fps-demos)
+####[View Demos](http://FiniteLooper.github.io/60fps-demos)
 
-####[View Slides as a Google Presentationn](https://docs.google.com/presentation/d/1gJN4AJIX4eGYr5I5TT245MhML4FjsMF7VnoxA0Kls20/edit?usp=sharing)
+####[View Slides as a Google Presentation](https://docs.google.com/presentation/d/1gJN4AJIX4eGYr5I5TT245MhML4FjsMF7VnoxA0Kls20/edit?usp=sharing)
 
 
 ---
