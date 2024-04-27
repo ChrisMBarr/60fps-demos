@@ -9,7 +9,7 @@
 
 ---
 
-###Resources:
+### Resources:
 
 * [jankfree.org](http://jankfree.org/)
 * [60fps layout and rendering](https://www.youtube.com/watch?v=YyQYhhy1dZI) (30 min. video)
